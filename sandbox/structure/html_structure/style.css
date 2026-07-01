@@ -1,0 +1,85 @@
+html {
+  font-size: 10px;
+}
+
+.container {
+  /* display: flex;
+  flex-direction: column; */
+
+  font-size: 24px;
+}
+
+.item {
+  background: #d9d9d9;
+}
+
+#em-font {
+  /* 부모 요소의 폰트 사이즈 기준 */
+  font-size: 5em;
+}
+
+#rem-font {
+  /* html 자체의 폰트사이즈 기준*/
+  font-size: 5rem;
+}
+
+.textbox_lh {
+  line-height: 1;
+}
+
+#listbox ol {
+  list-style-type: circle;
+}
+
+#imagebox {
+  
+  /** 
+  고정되지 않았기 떄문에 가장 큰 요소의 크기를 기반삼아 측정
+  [부모의 최종 좌표 = max(자식들 각각의 최대 좌표 + 자식들 각각의 여백)
+  */
+  
+  overflow: hidden;
+  /* 높이를 고정하면 요소가 모두 잘림 */
+  height: 100px;
+
+}
+
+#imagebox img{
+  /* float 사용 시 부모 요소에서 이미지를 인식하지 못하기 때문에 부모박스의 크기는 줄어듦 */
+  float: left;
+}
+
+#floatbox {
+  position: relative;
+
+  float: left;
+  width: 50%;
+  height: 100px;
+}
+
+.floatbox_child {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+
+  width: 150px;
+  height: 80%;
+  /* float: left; */
+}
+
+#fc1 {
+  background: #ffe9d4;
+}
+
+#fc2 {
+  background: #f2ff9d;
+}
+
+#tablebox table{
+  border-collapse: collapse;
+  caption-side: top;
+}
+
+#tablebox th, td {
+  border: 1px black solid;
+}
