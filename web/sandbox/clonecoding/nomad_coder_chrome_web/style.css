@@ -1,0 +1,15 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+}
+
+#bt-submit {
+  width: 100px;
+  aspect-ratio: 1/1;
+
+  background-color: black;
+  color: white;
+}

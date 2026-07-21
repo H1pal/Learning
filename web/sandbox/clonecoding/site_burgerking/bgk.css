@@ -1,0 +1,288 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+:root {
+  --font: "Sandoll GothicNeoRound", "Pretendard", sans-serif;
+  --font-pre: "Pretendard", "Sandoll GothicNeoRound", sans-serif;
+  --font-flame: "Flame", "Sandoll GothicNeoRound", sans-serif;
+  --font-BKR: "BKR", "Sandoll GothicNeoRound", "Pretendard", sans-serif;
+  --bg-base: #f5ebdc;
+  --bg-light: #fffcf8;
+  --normal: #502314;
+  --normal-rgb: 80, 35, 20;
+  --primary: #d62300;
+  --sub: #6f6f6f;
+  --light: #89665b;
+  --border: rgba(80, 35, 20, .1);
+  --form-border: #d4c3b4;
+  --disabled: #fffcf8;
+  --disabled-bg: rgba(80, 35, 20, .15);
+  --placeholder: rgba(80, 35, 20, .3);
+  --red: #d62300;
+  --orange: #ff8732;
+  --yellow: #fa0;
+  --green: #198737;
+  --king: #c9281d;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--normal);
+  font-family: 'Pretendard';
+}
+
+a {
+  text-decoration: none;
+  color: var(--normal);
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100px;
+  z-index: 1000;
+  background-color: var(--bg-base);
+}
+
+main {
+  padding: 100px 60px 0;
+}
+
+#header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+}
+
+#logo_img {
+  background: url(./assets/bg_logo.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  display: flex;
+  width: 200px;
+  height: 50px;
+}
+
+nav {
+  flex-grow: 0.9;
+  height: 100%;
+}
+
+#header_menu {
+  list-style: none;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+#header_menu > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#header_menu > li:hover > a {
+  color: var(--king);
+}
+
+#header_menu > li > a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--normal);
+  font-weight: 900;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+}
+
+#employment_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 110px;
+  height: 35px;
+  background-color: var(--normal);
+  border-radius: 20px;
+}
+
+#bt_to-employment {
+  width: 15px;
+  height: 15px;
+  background-image: url(./assets/ico_tit_link_w.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+}
+
+#employment_btn span {
+  color: var(--bg-base);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.header_submenu {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  top: 80px;
+  padding: 0px 0px;
+  background-color: var(--normal);
+  border-radius: 40px;
+  opacity: 0;
+  transition: padding 0.25s ease;
+}
+
+#header_menu > li:hover .header_submenu {
+  padding: 20px 30px;
+  background-color: var(--normal);
+  border-radius: 40px;
+  opacity: 1;
+  z-index: 2;
+}
+
+.header_submenu > li > a{
+  font-size: 0rem;
+  font-weight: bold;
+  color: var(--light);
+}
+
+#header_menu > li:hover .header_submenu > li > a{
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.header_submenu > li:hover > a{
+  color: var(--bg-light);
+}
+
+#sec01 {
+  display: grid;
+  gap: 20px;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 100%;
+  height: 538px;
+}
+
+.main_banner h2 {
+  font-weight: 900;
+  font-size: xx-large;
+  color: var(--bg-light);
+}
+
+.main_banner {
+  border-radius: 20px;
+  padding: 30px;
+}
+
+#main_banner01 {
+  grid-column: 1/ span 2;
+
+  background-image: url(./assets/banner/main_banner01.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  box-shadow: inset 0 -40px 100px 10px rgba(0, 0, 0, 0.356);
+}
+
+#main_banner_frame {
+  display: grid;
+  gap: 20px;
+}
+
+#main_banner02 {
+  background-color: var(--yellow);
+  background-image: url(./assets/bg_home_franchise.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+#main_banner03 {
+  background-color: var(--normal);
+}

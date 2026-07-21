@@ -1,0 +1,137 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+:root {
+  --timer-bg: #ff0088;
+  --timer-shadow: 0 10px 25px rgba(255, 0, 136, 0.3);
+}
+
+body {
+  background-color: white;
+  height: 100vh;
+}
+
+#header_container {
+  background-color: #ff3434;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+nav {
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 8px 16px;
+  background-color: #7eff22;
+  color: black;
+  font-weight: 900;
+  border-radius: 4px;
+}
+
+nav ul li:hover, nav ul li.selected {
+  background-color: #ff84f5;
+}
+
+#bt-reset {
+  position: absolute;
+  right: 20px;
+}
+
+#bt-reset button {
+  padding: 6px 12px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1.2px solid #000000;
+  font-weight: bold;
+  
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#timer_sec {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  /* max-width: 400px; */
+  height: 80vh;
+  gap: 15px;
+}
+
+.timer_box {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  
+  color: black;
+  background-color: white;
+
+  border: 3px solid black;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: scale(1);
+  box-shadow: 0 0px 0px rgba(0,0,0,0);
+}
+
+.timer_box.active{
+  background-color: var(--timer-bg);
+  color: white;
+
+  transform: scale(1.03); 
+  box-shadow: var(--timer-shadow);
+}
+
+@keyframes pausing_color {
+  0% { 
+    color: black;
+  }
+  50% {
+    color: rgba(0, 0, 0, 0.437);
+  }
+  75% {
+    color: rgba(0, 0, 0, 0.519);
+  }
+  100% { 
+    color: rgba(0, 0, 0, 0.178);
+  }
+}
+
+.timer_box.paused {
+  background-color: #d3d3d3ce;
+  color: black;
+
+  animation: pausing_color 2s ease infinite alternate;
+}
+
+.timer_box span {
+  font-size: 4rem;
+  font-weight: bold;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
