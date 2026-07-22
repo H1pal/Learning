@@ -1,4 +1,4 @@
-const constant = 10; /* 재할당, 재선언 불가 */
+const constant = 10; /* 재할당, 재선언 불가(가장 바람직한 자료형 선언문) */
 let let_var = 20; /* 재할당 가능, 재선언 불가 */
 var variable = 30; /* 재선언, 재할당 모두 가능 */
 
@@ -62,9 +62,9 @@ console.log();
 */
 
 
-console.log(typeof(integer)); // 정수형 타입
-console.log(typeof(integer.toString())); // 문자열로 형변환
-console.log(typeof(String(integer))); // 문자열로 형변환
+console.log(typeof integer); // 정수형 타입
+console.log(typeof integer.toString()); // 문자열로 형변환
+console.log(typeof String(integer)); // 문자열로 형변환
 console.log();
 
 
