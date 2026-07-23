@@ -1,11 +1,16 @@
-const API_KEY = "8df4410ae198bae7566fd0c409cd1ed2";
+import { API_KEY } from "../config.js";
 
 function onGeoSuccess(position) {
   
   const lat = position.coords.latitude; // 위도
   const lng = position.coords.longitude; // 경도
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
-  fetch(url).then(response => response.json()).then(data => {
+  const url = 
+  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+
+  // 파일 요청
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
     const weather = document.querySelector("#weather_container span:first-child");
     const city = document.querySelector("#weather_container span:last-child");
     const name = data.name;
@@ -13,6 +18,8 @@ function onGeoSuccess(position) {
     city.innerText = name;
     weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
     console.log(data.name, data.weather[0].main);
+  })
+  .catch(error => {console.error("error:", error);
   });
 }
 
