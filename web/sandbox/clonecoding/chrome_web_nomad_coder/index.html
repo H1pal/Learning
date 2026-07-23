@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <section id="main_container">
+    <div id="center_container">
+      <div id="greeting_container">
+        <div id="login_form_container">
+          <form action="" id="login_form" class="hidden">
+            <input required maxlength="15" value="heepal" type="text" placeholder="What is your name?" id="login-name">
+            <button id="bt-login" type="submit">Log In</button>
+          </form>
+        </div>
+        <div id="title_container">
+          <h1 id="greeting"></h1>
+          <form action="" id="todo_form">
+            <input type="text" name="input-todo" id="input-todo" placeholder="Write a Todo">
+          </form>
+          <ul id="todo_list">
+
+          </ul>
+          <h2 id="clock">00:00:00</h2>
+        </div>
+      </div>
+      <div id="quote_container">
+        <span class="quote" id="quote_message"></span>
+        <span class="quote" id="quote_author"></span>
+      </div>
+      <div id="weather_container">
+        <span ></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+  <script src="./js/app.js"></script>
+  <script src="./js/clock.js"></script>
+  <script src="./js/quote.js"></script>
+  <script src="./js/background.js"></script>
+  <script src="./js/todo.js"></script>
+  <script src="./js/weather.js"></script>
+</body>
+</html>

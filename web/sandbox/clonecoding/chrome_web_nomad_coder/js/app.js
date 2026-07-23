@@ -12,13 +12,14 @@ function onLoginSubmit(event) {
   loginForm.classList.add(HIDDEN_CLASS);
   
   const userName = loginInput.value;
-  console.log(userName);
   
-  paintingGreeting(userName);
-
   localStorage.setItem(USERNAME_KEY, userName); // 로컬저장소에 key가 userName인 입력된 userName을 저장
-
-
+  
+  paintingGreeting();
+  
+  
+  console.log(userName); // 확인용 출력
+  
   
   // if (usreName === "") {
   //   alert("Please write your name");
@@ -30,7 +31,8 @@ function onLoginSubmit(event) {
   // require와 maxlength로 처리 가능
 }
 
-function paintingGreeting(userName) {
+function paintingGreeting() {
+  const userName = localStorage.getItem(USERNAME_KEY);
   greeting.classList.remove(HIDDEN_CLASS);
   greeting.innerText = `Hello ${userName}`;
 }
@@ -41,7 +43,7 @@ if (savedUserName === null) { // show the form
   loginForm.classList.remove(HIDDEN_CLASS);
   loginForm.addEventListener("submit", onLoginSubmit);
 } else { // hide the form
-  paintingGreeting(savedUserName);
+  paintingGreeting();
 }
 
 

@@ -1,5 +1,5 @@
 -- -- print()
--- -- a
+-- a
 -- aa
 local n1 = io.read("n")
 local n2 = n1
