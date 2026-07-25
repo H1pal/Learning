@@ -57,7 +57,7 @@ Object.entries(calculator)
 
 
 /* Function */
-// 함수도 객체 중 하나
+// 함수는 일급 객체
 // 함수를 선언하는 형식은 다양함
 console.log(); // <- 이 형식은 모두 함수
 
@@ -70,6 +70,7 @@ function sayHello(name) {
 
 const returnValue = sayHello("lalalala");
 console.log(returnValue);
+console.log(typeof returnValue);
 
 const nameList = ['heepal', 'napal', "Mother", "Father"];
 nameList.forEach((name, seq) => { sayHello(`${name} who have ${seq + 1} | num!`) });

@@ -24,7 +24,7 @@ let recursivePattern;
 // const pattern = hallowRectangularPattern(num).join("\n");
 // console.log(pattern);
 
-
+// 속빈 사각형
 function hallowRectangularPattern(num) {
   if (num == 1) return ["*"];
 
@@ -50,7 +50,7 @@ function hallowRectangularPattern(num) {
 recursivePattern = leftsideTrianglePattern(num).reverse().join("\n");
 console.log(recursivePattern);
 
-
+// 왼쪽 방향 직각 삼각형
 function leftsideTrianglePattern(num) {
   if (num == 1) return ["*"];
   
@@ -62,7 +62,7 @@ function leftsideTrianglePattern(num) {
 }
 console.log();
 
-
+// 오른쪽 방향 직각 삼각형
 recursivePattern = rightsideTrianglePattern(num).join("\n");
 console.log(recursivePattern);
 
@@ -88,7 +88,6 @@ function squarePattern(num, cnt = 1) {
 
 function leftTurningTriangle(num) {
   if (num == 1) return [];
-  
 
   return leftTurningTriangle(num - 1);
 }
@@ -96,9 +95,9 @@ function leftTurningTriangle(num) {
 //         *
 //        * *
 //       *   *
-//      *     *
-//     *       *
-//    *         *
+//      *******
+//     * *   * *
+//    *   * *   *
 //   *************
 //  * * * * * * * *
 // *****************
