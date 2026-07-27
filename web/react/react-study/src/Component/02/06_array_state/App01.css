@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f3f5f7;
+}
+
+.container {
+  width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+}
+
+p {
+  text-align: center;
+  color: #555;
+}
+
+.student-list {
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.student-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 14px;
+  background-color: #f6f7f9;
+  border-radius: 8px;
+}
+
+.student-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-weight: bold;
+  color: white;
+  background-color: #4c6ef5;
+  border-radius: 50%;
+}
