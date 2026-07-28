@@ -1,0 +1,124 @@
+:root {
+  --mouse-x: none;
+  --mouse-y: none;
+}
+
+.interactive-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.15), /* 중심부: 은은한 보라빛 조명 */
+    transparent 80%           /* 외각: 투명하게 사라짐 */
+  );
+  
+  /* 움직임이 부드럽게 이어지도록 트랜지션 추가 (선택) */
+  transition: background 0.1s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#count_content_container span{
+  display: block;
+  color: rgb(240, 248, 255);
+}
+
+#count_content_container span:first-child {
+  font-size: 1rem;
+}
+
+#count_content_container span:last-child {
+  font-size: 5rem;
+}
+
+#controller_container {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+#count {
+  user-select: none;
+}
+
+.bt-nav_box {
+  flex: 1 1 0%;
+  text-align: center;
+}
+
+.bt-nav {
+  width: 70%;
+  border: none;
+  background-color: transparent;
+  opacity: .6;
+  /* padding: 10px 50px; */
+  font-size: 1rem;
+  /* font-weight: 600; */
+  transition: all cubic-bezier(0.215, 0.610, 0.355, 1) .4s;
+  color: white;
+  padding: 10px 5px;
+  border-radius: 7.5px 7.5px 0 0;
+  backdrop-filter: blur(8px) brightness(.8);
+}
+
+.bt-nav:hover {
+  transform: translateY(-.5px);
+  font-weight: 600;
+  font-size: 1.05rem;
+  opacity: 1;
+  animation: rainbow 10s infinite;
+  transform: translateY(-1px);
+}
+
+.bt-nav.focused {
+  animation: rainbow 10s infinite;
+  font-weight: 600;
+  font-size: 1.05rem;
+  opacity: 1;
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+@keyframes rainbow {
+  0% {
+    color: palevioletred;
+    text-shadow: 0px 0px 12px palevioletred;
+  }
+  14% {
+    color: red;
+    text-shadow: 0px 0px 12px red;
+  }
+  29% {
+    color: orange;
+    text-shadow: 0px 0px 12px orange;
+  }
+
+  43% {
+    color: yellow;
+    text-shadow: 0px 0px 12px yellow;
+  }
+
+  57% {
+    color: green;
+    text-shadow: 0px 0px 12px green;
+  }
+
+  71% {
+    color: blue;
+    text-shadow: 0px 0px 12px blue;
+  }
+
+  85% {
+    color: navy;
+    text-shadow: 0px 0px 12px navy;
+  }
+
+  100% {
+    color: purple;
+    text-shadow: 0px 0px 12px purple;
+  }
+}
