@@ -1,3 +1,5 @@
+import './Button.css';
+
 function Body() {
   function handleOnClick() {
     alert('button clicked!');

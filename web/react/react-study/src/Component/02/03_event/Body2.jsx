@@ -1,10 +1,12 @@
+import './Button.css';
+
 function Body() {
   function handleOnClick(e) {
     console.log(e);
     console.log(e.target.name);
   }
   return (
-    <div>
+    <div style={{margin:'50px'}}>
       <button name="A버튼" onClick={handleOnClick} className="btn">
         A 버튼
       </button>

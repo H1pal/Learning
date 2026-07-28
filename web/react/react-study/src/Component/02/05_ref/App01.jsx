@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function App() {
+function Body() {
   const [name, setName] = useState('');
 
   const onSubmit = (event) => {
@@ -37,4 +37,4 @@ function App() {
   );
 }
 
-export default App;
+export default Body;

@@ -57,3 +57,13 @@ p {
   background-color: #4c6ef5;
   border-radius: 50%;
 }
+
+#input-search {
+  transition: background-color cubic-bezier(0.175, 0.885, 0.32, 1.275) .5s;
+  background-color: white;
+}
+
+.darkmode {
+  background-color: black !important;
+  color: white;
+}

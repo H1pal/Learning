@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-function App() {
+function Body() {
   const [name, setName] = useState('');
   const nameRef = useRef(null);
 
@@ -41,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default Body;

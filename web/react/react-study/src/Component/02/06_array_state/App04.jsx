@@ -1,11 +1,14 @@
 import { useState } from 'react';
 
-function App() {
+function Body() {
+  const majors = ['소프트웨어개발과', '인공지능소프트웨어개발과'];
+  // const [majorIndex, setMajorIndex] = useState(0);
   const [student, setStudent] = useState({
     name: '김민수',
     age: 17,
-    major: '소프트웨어개발과',
+    majorIndex: 0
   });
+  
 
   const handleAgeUp = () => {
     setStudent({
@@ -15,10 +18,11 @@ function App() {
   };
 
   const handleChangeMajor = () => {
+    // setMajorIndex(majorIndex === 0 ? 1: 0);
     setStudent({
       ...student,
-      major: '인공지능소프트웨어과',
-    });
+      majorIndex: student.majorIndex === 0 ? 1: 0
+    })
   };
 
   return (
@@ -27,7 +31,7 @@ function App() {
 
       <p>이름: {student.name}</p>
       <p>나이: {student.age}세</p>
-      <p>전공: {student.major}</p>
+      <p>전공: {majors[student.majorIndex]}</p>
 
       <button onClick={handleAgeUp}>나이 1 증가</button>
       <button onClick={handleChangeMajor}>전공 변경</button>
@@ -35,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default Body;

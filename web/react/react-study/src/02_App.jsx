@@ -2,8 +2,16 @@
 // import Footer from "./Component/02/01_component/Footer";
 // import Header from "./Component/02/01_component/Header";
 // import Body from "./Component/02/02_jsx/Body";
-import Body from "./Component/02/03_event/Body";
+// import Body from "./Component/02/03_event/Body";
 // import Body from "./Component/02/03_event/Body2";
+// import AppOfState from "./Component/02/04_state/App";
+// import Body from "./Component/02/05_ref/Body_book";
+// import Body from "./Component/02/05_ref/App_ref";
+// import Body from "./Component/02/05_ref/App01";
+// import Body from "./Component/02/06_array_state/App01";
+// import Body from "./Component/02/06_array_state/App02";
+// import Body from "./Component/02/06_array_state/App03";
+import Body from "./Component/02/06_array_state/App04";
 
 // 기본
 // function App() {
@@ -68,7 +76,16 @@ import Body from "./Component/02/03_event/Body";
 //   );
 // }
 
-// 02_jsx, 03_event
+//state 종류들
+// function MyApp() {
+//   return(
+//     <div className="MyApp">
+//       <AppOfState />
+//     </div>
+//   );
+// }
+
+// 02_jsx, 03_event, 05_ref, 06_array_state
 function MyApp() {
   return (
     <div className="MyApp">

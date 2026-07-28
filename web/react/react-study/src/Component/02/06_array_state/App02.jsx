@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './App.css';
+import './Body.css';
 
-function App() {
+function Body() {
   const [students, setStudents] = useState(['김민수', '이지우', '박서준']);
 
   return (
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Body;

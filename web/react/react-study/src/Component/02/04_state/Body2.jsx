@@ -1,14 +1,24 @@
 import { useState } from 'react';
+function Viewer() {
+  console.log('Viewer Component Update!!');
+  return <div>Viewer</div>;
+}
 function Body() {
-  console.log('Update!');
-  const [count, setCount] = useState(0);
+  const [number, setNumber] = useState(0);
   const onIncrease = () => {
-    setCount(count + 1);
+    setNumber(number + 1);
+  };
+  const onDecrease = () => {
+    setNumber(number - 1);
   };
   return (
     <div>
-      <h2>{count}</h2>
-      <button onClick={onIncrease}>+</button>
+      <h2>{number}</h2>
+      <Viewer />
+      <div>
+        <button onClick={onDecrease}>-</button>
+        <button onClick={onIncrease}>+</button>
+      </div>
     </div>
   );
 }

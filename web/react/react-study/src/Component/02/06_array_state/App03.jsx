@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import './Body01.css';
 
-function App() {
+function Body() {
   const [count, setCount] = useState(0);
   const [keyword, setKeyword] = useState('');
   const [isDark, setIsDark] = useState(false);
@@ -14,6 +15,8 @@ function App() {
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
         placeholder="검색어 입력"
+        id="input-search"
+        className= {isDark ? "darkmode" : ""}
       />
 
       <button onClick={() => setIsDark(!isDark)}>
@@ -23,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Body;

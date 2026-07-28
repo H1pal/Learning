@@ -1,8 +1,8 @@
-import './App01.css';
+import './Body01.css';
 
 import { useState } from 'react';
 
-function App() {
+function Body() {
   const [student1, setStudent1] = useState('김민수');
   const [student2, setStudent2] = useState('이지우');
   const [student3, setStudent3] = useState('박서준');
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Body;
