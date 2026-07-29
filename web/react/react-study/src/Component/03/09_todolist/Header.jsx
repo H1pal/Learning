@@ -2,6 +2,7 @@ import './Header.css'
 
 function Header() {
   return(
+    // 헤더!
     <header className="Header">
       <h1>
         TODAY | {new Date().toDateString()}

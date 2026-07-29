@@ -53,6 +53,14 @@
   border-radius: 5px;
 }
 
+#todo-count_container {
+  display: flex;
+}
+
+.count_content {
+  flex: .3 1 0%;
+}
+
 #input-search {
   margin-bottom: 20px;
   width: 100%;
