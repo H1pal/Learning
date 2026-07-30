@@ -1,4 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
+import './App.css'
+
 
 function Body() {
   const [count, setCount] = useState(0);
@@ -24,7 +26,7 @@ function Body() {
   }, []); // 라이프사이클 제어하기
 
   return ( 
-    <div id="main_container">
+    <div id="Body">
       <header>
         <h1>Counter</h1>
       </header>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css'
 
 function Body() {
   // useState 훅을 이용한 유연한 상태 관리
@@ -14,21 +15,25 @@ function Body() {
     // 함수에서 상호작용하여 setState함수 호출
     setHunger((prevHunger) => Math.max(prevHunger - 10, 0));
     setHappiness((prevHappiness) => Math.min(prevHappiness + 10, 100));
-  }
+  };
 
   const playWithPet = () => {
     setHunger((prevHunger) => Math.min(prevHunger + 10, 100));
     setHappiness((prevHappiness) => Math.min(prevHappiness + 20, 100));
-  }
+  };
 
   return (
-    <div>
-      <h1>가상 펫 키우기</h1>
-      <p>배고픔: {hunger}</p>
-      <p>행복함: {happiness}</p>
-      <button onClick={feedPet}>먹이 주기</button>
-      <button onClick={playWithPet}>같이 놀기</button>
-      { /* 1. 클릭 시 함수가 실행 */ }
+    <div id="Body">
+      <header>
+        <h1>가상 펫 키우기</h1>
+      </header>
+      <main>
+        <p>배고픔: {hunger}</p>
+        <p>행복함: {happiness}</p>
+        <button onClick={feedPet}>먹이 주기</button>
+        <button onClick={playWithPet}>같이 놀기</button>
+        {/* 1. 클릭 시 함수가 실행 */}
+      </main>
     </div>
   );
 }

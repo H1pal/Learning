@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import './App.css'
+
 
 function Body() {
   const [text, setText] = useState("");
@@ -19,7 +21,7 @@ function Body() {
   }, []);
   
   return (  
-    <div>
+    <div id="Body">
       <main>
         <div id="text_form">
           <form action="">

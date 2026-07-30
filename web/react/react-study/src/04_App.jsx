@@ -1,9 +1,13 @@
-// import Body from "./Component/04/10_hook/useState";
-// import Body from "./Component/04/10_hook/useEffect";
-import Body from "./Component/04/10_hook/useRef";
+// import Body from "./Component/04/09_hook/UseState";
+// import Body from "./Component/04/09_hook/UseEffect";
+// import Body from "./Component/04/09_hook/UseRef";
+// import Body from "./Component/04/09_hook/UseReducer";
+// import Body from "./Component/04/09_hook/UseMemo";
+// import Body from "./Component/04/09_hook/UseCallback";
+import Body from "./Component/04/09_hook/UseContext/UseContext";
 
 function MyApp() {
-  return ( 
+  return (
     <div className="MyApp">
       <Body />
     </div>
