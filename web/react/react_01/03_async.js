@@ -84,7 +84,15 @@ function cookedLamen() {
 // const res = double(10, double); // 비동기는 일반적으로 작업 결과를 반환할 수 없음
 // console.log(res);
 
-//ex03의 개선된 코드(콜백지옥 우려)
+//ex03의 개선된 코드
+/* 
+*/
+// 콜백의 단점:
+// 비동기 작업을 콜백으로 처리하면 콜백 지옥 우려가 있음 
+// * 가독성(코드가 오른쪽으로 치우쳐짐)
+// * 실행 순서를 한 눈에 파악하기 어려움
+// * 중간에 오류 발생 시 처리하기 어려움
+// * 코드를 수정하거나 작업을 추가하기 어려움
 function double(num, callback) {
   setTimeout(() => {
     const doubleNum = num * 2;

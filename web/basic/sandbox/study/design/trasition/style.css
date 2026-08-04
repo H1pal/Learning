@@ -1,0 +1,21 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+section {
+  padding: 20px;
+}
+
+.box {
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+#main_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
