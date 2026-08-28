@@ -1,12 +1,14 @@
-import './Todo.css'
+import "./Todo.css";
 import Header from "./Header";
 import TodoEditor from "./TodoEditor";
 import TodoList from "./TodoList";
-import React, { useCallback, useMemo, useReducer, useRef } from 'react';
-export const TodoStateContext = React.createContext(); // todo state 전용 context
-export const TodoDispatchContext = React.createContext(); // setState 세터함수들 전용 context
+import { useCallback, useMemo, useReducer, useRef, createContext } from "react";
+export const TodoStateContext = createContext(); // todo state 전용 context
+export const TodoDispatchContext = createContext(); // setState 세터함수들 전용 context
 
+// useReducer에서 거쳐갈 함수
 function reducer(state, action) {
+  // 현재 상태와 새로운 값을 인자로 받음
   // setTodo에서 넘겨받은 type으로 setState의 상태 로직 구분
   switch (action.type) {
     case "CREATE":
@@ -14,16 +16,13 @@ function reducer(state, action) {
 
     case "UPDATE":
       // 컴포넌트가 업데이트된 id의 해당 아이템의 상태 변경
-      return state.map((it) => 
-        it.id === action.targetId ? 
-        { ...it, isDone: !it.isDone } : 
-        it);
+      return state.map((it) =>
+        it.id === action.targetId ? { ...it, isDone: !it.isDone } : it,
+      );
 
     case "DELETE":
       // 삭제 셀렉팅된 해당 item의 id를 기준으로 배제해 todo를 재생성
-      return state.filter((it) => 
-        it.id !== action.targetId
-      );
+      return state.filter((it) => it.id !== action.targetId);
     default:
       // 오류 방지
       return state;
@@ -40,41 +39,42 @@ function Body() {
     setTodo({
       type: "CREATE",
       newItem: {
-        id: idRef.current,
+        id: idRef.current++, // todoItem 각각에 고유한 id를 갖도록 한다
         content: content,
         timeStamp: new Date().getTime(),
-        isDone: false
+        isDone: false,
       },
     });
-    idRef.current++; // todoItem 각각에 고유한 id를 갖도록 한다
   };
 
-  // useCallback을 이용하여 함수 메모이제이션 -> 성능 최적화
+  // useCallback을 이용하여 최초 시에만 실행 (함수 메모이제이션 -> 성능 최적화)
   const onUpdate = useCallback((targetId) => {
-    setTodo({ 
+    setTodo({
       type: "UPDATE",
-      targetId
+      targetId,
     });
   }, []);
 
   const onDelete = useCallback((targetId) => {
-    setTodo({ 
-      type: "DELETE", 
-      targetId 
+    setTodo({
+      type: "DELETE",
+      targetId,
     });
   }, []);
 
   // 상태 세터함수들을 값 메모이제이션으로 최적화(리렌더링 최초 한 번만 실행)
-  const memoizedDispatches = useMemo(() => { return { onCreate, onUpdate, onDelete }; }, []);
-  return(
-    <div className='Body'>
-      <div id='main_container'>
+  const memoizedDispatches = useMemo(() => {
+    return { onCreate, onUpdate, onDelete };
+  }, []);
+  return (
+    <div className="Body">
+      <div id="main_container">
         <Header />
         {/* 
           제때에 사용되지 않음에도 전달만을 목적으로 props를 받는 props drilling 현상 방지
           (유지 보수성 향상, 불필요한 렌더링 방지)
         */}
-        <TodoStateContext.Provider value={{ todo }}> 
+        <TodoStateContext.Provider value={{ todo }}>
           <TodoDispatchContext.Provider value={memoizedDispatches}>
             <TodoEditor />
             <TodoList />
@@ -85,4 +85,4 @@ function Body() {
   );
 }
 
-export default Body
+export default Body;
