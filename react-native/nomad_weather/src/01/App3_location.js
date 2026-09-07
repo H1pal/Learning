@@ -5,26 +5,32 @@ import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native";
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
 export default function App() {
-  const [city, setCity] = useState("Loading...");
-  const [location, setLocation] = useState();
+  // locaion에서 도시 이름 정보만 추출하여 상태 관리
+  const [city, setCity] = useState(null);
+  // const [location, setLocation] = useState();
   const [ok, setOk] = useState(true);
 
+  // 사용자의 location을 가져오는 함수
+  // API값으로 promise를 반환하므로 비동기로 처리 (async, await)
   const getPermission = async () => {
     const permission = await Location.requestForegroundPermissionsAsync();
-    // 사용자가 위치 권한 설정에 대한 데이터를 가져옴
+    // 사용자가 위치 권한 설정에 요청을 보내고 반응값을 불러옴
     // console.log(permission);
     if (permission.status !== "granted") {
+      // 만약 접근 권한이 허용되지 않는다면
       console.log("Permission to access location was denied");
       setOk(false);
       return;
     }
 
+    // 현재 위치 좌표 가져오기
     const {
       coords: { latitude, longitude },
     } = await Location.getCurrentPositionAsync({
       accuracy: Location.Accuracy.Balanced,
     });
 
+    // 해당 좌표값의 지역 정보 가져오기
     const location = await Location.reverseGeocodeAsync({
       latitude,
       longitude,
@@ -36,11 +42,21 @@ export default function App() {
   useEffect(() => {
     getPermission();
   }, []);
+  // dep: (빈 배열) mount 시에만 사용자 권한 요청 보내기
+
+  // 화면에 띄울 text
+  let text = "Waiting...";
+  if (!ok) {
+    text = "Permission to access location was denied";
+  } else if (city) {
+    text = city;
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.city}>
-        <Text style={styles.cityName}>{city}</Text>
+        {/* location의 내용을 화면에 출력 */}
+        <Text style={styles.cityName}>{text}</Text>
       </View>
       <ScrollView
         pagingEnabled

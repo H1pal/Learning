@@ -1,5 +1,5 @@
 {
-  "name": "nomad_weather",
+  "name": "nomad_todolist",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,13 +9,11 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "54.0.37",
-    "expo-location": "~19.0.8",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~54.0.36",
     "expo-status-bar": "~3.0.9",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-native": "0.81.5",
-    "react-native-web": "^0.21.0"
+    "react-native": "0.81.5"
   },
   "private": true
 }
